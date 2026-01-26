@@ -1,11 +1,11 @@
 import styles from "./FeedPost.module.css";
 
-import avatar from "../../assets/perfil-sem-foto.jpeg";
-import likeIcon from "../../assets/coracao.svg";
-import commentIcon from "../../assets/comentario.svg";
-import repostIcon from "../../assets/repost.svg";
-import sendIcon from "../../assets/enviar.svg";
-import saveIcon from "../../assets/salvar.svg";
+import avatar from "../../assets/feed/perfil-sem-foto.jpeg";
+import likeIcon from "../../assets/feed/coracao.svg";
+import commentIcon from "../../assets/feed/comentario.svg";
+import repostIcon from "../../assets/feed/repost.svg";
+import sendIcon from "../../assets/feed/enviar.svg";
+import saveIcon from "../../assets/feed/salvar.svg";
 
 export default function FeedPost() {
   return (

@@ -6,12 +6,12 @@
   align-items: flex-end;
   gap: 8px;
   width: 100%;
-  margin-bottom: 6px;
+  margin: 3px 0px 3px;
 }
 
 /* Quando tem reação, aumentar margin-bottom */
 .igMessage:has(.igMessageReaction) {
-  margin-bottom: 26px;
+  margin-bottom: 20px;
 }
 
 /* ===== RECEBIDA ===== */

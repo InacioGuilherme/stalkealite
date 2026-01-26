@@ -88,6 +88,58 @@ const STORIES = [
     blurred: true
   },
   {
+    name: "Lau*******",
+    note: "Alguém??",
+    avatar: avatar4,
+    blurred: true
+  },
+  {
+    name: "Joã*******",
+    isMusicNote: true,
+    music: {
+      title: "365 Dias (Vida Mansa)",
+      artist: "MC Marks, MC Ryan SP, MC Jvila, MC Bruno MS, MC Magal"
+    },
+    avatar: avatar5,
+    blurred: true
+  },
+  {
+    name: "The*******",
+    note: "Já não aguento mais!",
+    avatar: avatar6,
+    blurred: true
+  },
+  {
+    name: "Bea*******",
+    isMusicNote: true,
+    music: {
+      title: "APT.",
+      artist: "Rosé & Bruno Mars"
+    },
+    avatar: avatar7,
+    blurred: true
+  },
+  {
+    name: "Sop*******",
+    isMusicNote: true,
+    music: {
+      title: "Whats I've Done",
+      artist: "Link Park"
+    },
+    avatar: avatar8,
+    blurred: true
+  },
+  {
+    name: "Let*******",
+    isMusicNote: true,
+    music: {
+      title: "Oh Garota Eu Quero Você Só Pra Mim",
+      artist: "Oruam, Zé Felipe, MC Tuto, MC Rodrigo Do CN"
+    },
+    avatar: avatar9,
+    blurred: true
+  },
+  {
     name: "Marc*******",
     note: "📍💦",
     avatar: playboy,

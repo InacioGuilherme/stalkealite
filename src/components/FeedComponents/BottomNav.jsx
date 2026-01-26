@@ -1,9 +1,9 @@
 import styles from "./BottomNav.module.css";
 
-import homeIcon from "../../assets/casa.svg";
-import searchIcon from "../../assets/lupa.svg";
-import reelsIcon from "../../assets/reels.svg";
-import profileIcon from "../../assets/perfil-sem-foto.jpeg";
+import homeIcon from "../../assets/feed/casa.svg";
+import searchIcon from "../../assets/feed/lupa.svg";
+import reelsIcon from "../../assets/feed/reels.svg";
+import profileIcon from "../../assets/feed/perfil-sem-foto.jpeg";
 
 export default function BottomNav() {
   return (

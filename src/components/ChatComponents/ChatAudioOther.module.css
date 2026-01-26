@@ -7,6 +7,12 @@
   margin-bottom: 2px;
   position: relative;
   overflow: visible;
+  margin: 4px 0px 8px 0px;
+}
+
+/* Quando tem reação, aumentar margin-bottom */
+.message.hasReaction {
+  margin-bottom: 20px;
 }
 
 /* ===== AVATAR ===== */
@@ -24,6 +30,11 @@
   opacity: 0.85;
   -webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%);
   mask-image: radial-gradient(circle, white 100%, black 100%);
+}
+
+.avatarHidden {
+  visibility: hidden;
+  opacity: 0;
 }
 
 /* ===== BOLHA ===== */
@@ -151,4 +162,28 @@
 
 .transcricao:hover {
   color: rgba(156, 163, 175, 0.7);
+}
+
+/* ===== REAÇÃO ===== */
+
+.reaction {
+  position: absolute;
+  bottom: -20px;
+  left: -4px;
+  background-color: rgb(25, 27, 30);
+  border: 2px solid rgb(11, 16, 20);
+  border-radius: 14px;
+  padding: 2.7px 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 2;
+}
+
+.reaction:hover {
+  transform: scale(1.1);
 }

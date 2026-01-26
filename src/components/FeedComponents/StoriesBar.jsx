@@ -1,5 +1,5 @@
 import styles from "./StoriesBar.module.css";
-import avatar from "../../assets/perfil-sem-foto.jpeg";
+import avatar from "../../assets/feed/perfil-sem-foto.jpeg";
 
 const STORIES = [
   { name: "Dav*****", type: "locked" },

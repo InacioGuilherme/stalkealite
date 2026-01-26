@@ -1,29 +1,28 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import styles from "./ChatAudioOther.module.css";
 import avatarFallback from "../../assets/chat/perfil-sem-foto.jpeg";
+import BlockedScrollPopup from "./BlockedScrollPopup";
 
-export default function ChatAudioOther({ duration = "0:32", audioSrc = "", showTranscript = true }) {
+export default function ChatAudioOther({ 
+  duration = "0:20", 
+  showAvatar = true, 
+  showTranscript = true,
+  reaction = null 
+}) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [progress, setProgress] = useState(0);
   const [hasListened, setHasListened] = useState(false);
+  const [showBlockPopup, setShowBlockPopup] = useState(false);
   const audioRef = useRef(null);
   const waveformRef = useRef(null);
   
-  // Gerar alturas aleatórias para as barras (entre 15px e 35px)
   const [waveHeights] = useState(() => {
-    return Array.from({ length: 34 }, () => Math.floor(Math.random() * 21) + 15);
+    return Array.from({ length: 30 }, () => Math.floor(Math.random() * 11) + 18);
   });
 
   const togglePlay = () => {
-    if (audioRef.current) {
-      if (isPlaying) {
-        audioRef.current.pause();
-      } else {
-        audioRef.current.play();
-        setHasListened(true);
-      }
-      setIsPlaying(!isPlaying);
-    }
+    // BLOQUEAR - Mostrar popup de VIP
+    setShowBlockPopup(true);
   };
 
   const handleTimeUpdate = () => {
@@ -40,58 +39,72 @@ export default function ChatAudioOther({ duration = "0:32", audioSrc = "", showT
   };
 
   return (
-    <div className={styles.message}>
-      <img
-        src={avatarFallback}
-        alt=""
-        className={styles.avatar}
-        draggable={false}
-      />
+    <>
+      <div className={`${styles.message} ${reaction ? styles.hasReaction : ''}`}>
+        <img
+          src={avatarFallback}
+          alt=""
+          className={`${styles.avatar} ${!showAvatar ? styles.avatarHidden : ''}`}
+          draggable={false}
+        />
 
-      <div className={styles.bubble}>
-        <div className={styles.audioRecebido}>
-          <button
-            type="button"
-            className={`${styles.playBtn} ${hasListened ? styles.listened : ''}`}
-            onClick={togglePlay}
-            aria-label="Reproduzir áudio"
-          >
-            <i className={`fas ${isPlaying ? 'fa-pause' : 'fa-play'}`}></i>
-          </button>
+        <div className={styles.bubble}>
+          <div className={styles.audioRecebido}>
+            <button
+              type="button"
+              className={`${styles.playBtn} ${hasListened ? styles.listened : ''}`}
+              onClick={togglePlay}
+              aria-label="Reproduzir áudio"
+            >
+              <i className={`fas ${isPlaying ? 'fa-pause' : 'fa-play'}`}></i>
+            </button>
 
-          <div className={styles.waveform} ref={waveformRef}>
-            {waveHeights.map((height, i) => {
-              const barProgress = (i / waveHeights.length) * 100;
-              const isActive = barProgress <= progress;
-              
-              return (
-                <div
-                  key={i}
-                  className={`${styles.waveBar} ${isPlaying ? styles.playing : ''} ${isActive ? styles.active : ''}`}
-                  style={{ height: `${height}px` }}
-                />
-              );
-            })}
+            <div className={styles.waveform} ref={waveformRef}>
+              {waveHeights.map((height, i) => {
+                const barProgress = (i / waveHeights.length) * 100;
+                const isActive = barProgress <= progress;
+                
+                return (
+                  <div
+                    key={i}
+                    className={`${styles.waveBar} ${isPlaying ? styles.playing : ''} ${isActive ? styles.active : ''}`}
+                    style={{ height: `${height}px` }}
+                  />
+                );
+              })}
+            </div>
+
+            <span className={styles.duration}>{duration}</span>
+
+            {showTranscript && (
+              <div className={styles.transcricao}>
+                Ver transcrição
+              </div>
+            )}
           </div>
 
-          <span className={styles.duration}>{duration}</span>
-
-          {showTranscript && (
-            <div className={styles.transcricao}>
-              Ver transcrição
+          {reaction && (
+            <div className={styles.reaction}>
+              {reaction}
             </div>
           )}
         </div>
+
+        {false && (
+          <audio
+            ref={audioRef}
+            onTimeUpdate={handleTimeUpdate}
+            onEnded={handleEnded}
+          />
+        )}
       </div>
 
-      {audioSrc && (
-        <audio
-          ref={audioRef}
-          src={audioSrc}
-          onTimeUpdate={handleTimeUpdate}
-          onEnded={handleEnded}
-        />
-      )}
-    </div>
+      <BlockedScrollPopup 
+        show={showBlockPopup} 
+        onClose={() => setShowBlockPopup(false)}
+        title="🔒 Conteúdo bloqueado"
+        description="Apenas membros VIP podem ouvir mensagens de áudio"
+      />
+    </>
   );
 }

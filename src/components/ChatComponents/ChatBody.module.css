@@ -4,12 +4,14 @@
 
 .chatBody {
   position: fixed;
-  top: 56px;      /* altura do header */
-  bottom: 66px;   /* altura do input */
+  top: 56px;
+  bottom: 66px;
   left: 0;
   right: 0;
   overflow-y: auto;
+  overflow-x: hidden;
   padding: 12px 10px;
+  background-color: rgb(11, 16, 20);
 }
 
 /* =====================================================
@@ -21,4 +23,36 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+}
+
+/* =====================================================
+   BLUR APENAS NAS MENSAGENS ANTIGAS (COM CLASSE)
+===================================================== */
+
+.chatBody .oldMessage {
+  filter: blur(25px);
+  opacity: 0.3;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* =====================================================
+   SCROLLBAR (CINZA ESCURA - NÃO ROXA)
+===================================================== */
+
+.chatBody::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chatBody::-webkit-scrollbar-track {
+  background: rgb(11, 16, 20);
+}
+
+.chatBody::-webkit-scrollbar-thumb {
+  background: rgb(28, 30, 33);
+  border-radius: 3px;
+}
+
+.chatBody::-webkit-scrollbar-thumb:hover {
+  background: rgb(55, 55, 55);
 }

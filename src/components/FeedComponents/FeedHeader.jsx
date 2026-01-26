@@ -1,9 +1,11 @@
+import { useNavigate } from "react-router-dom";
 import styles from "./FeedHeader.module.css";
-import instaLogo from "../../assets/logo-insta.png";
-import heartIcon from "../../assets/coracao.svg";
-import sendIcon from "../../assets/enviar.svg";
+import instaLogo from "../../assets/feed/logo-insta.png";
+import heartIcon from "../../assets/feed/coracao.svg";
+import sendIcon from "../../assets/feed/enviar.svg";
 
 export default function FeedHeader() {
+  const navigate = useNavigate();
   return (
     <header className={styles.feedHeader}>
       <div className={styles.feedHeaderLeft}>
@@ -16,7 +18,7 @@ export default function FeedHeader() {
           <span className={styles.notificationDot} />
         </button>
 
-        <button className={styles.iconButton}>
+        <button className={styles.iconButton} onClick={() => navigate('/direct')}>
           <img src={sendIcon} alt="Directs" />
           <span className={styles.notificationBadge}>2</span>
         </button>

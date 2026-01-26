@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styles from './Home.module.css';
 import MatrixCanvas from '../components/HomeComponents/MatrixCanvas';
 import HeroSection from '../components/HomeComponents/HeroSection';
@@ -6,6 +7,7 @@ import InstagramLogin from '../components/HomeComponents/InstagramLogin';
 import ConfirmModal from '../components/HomeComponents/ConfirmModal';
 
 const Home = () => {
+  const navigate = useNavigate();
   const [titleText, setTitleText] = useState('');
   const [subtitleText, setSubtitleText] = useState('');
   const [isButtonVisible, setIsButtonVisible] = useState(false);
@@ -150,7 +152,7 @@ const Home = () => {
         <InstagramLogin
           username={username}
           onLoginComplete={() => {
-            console.log('Senha encontrada! Acesso concedido.');
+            navigate('/feed');
           }}
         />
       )}

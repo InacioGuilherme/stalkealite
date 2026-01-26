@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import styles from "./ChatHeader.module.css";
 
 import backIcon from "../../assets/chat/setaparaolado2.svg";
@@ -6,10 +7,12 @@ import videoIcon from "../../assets/chat/video.svg";
 import avatarFallback from "../../assets/chat/perfil-sem-foto.jpeg";
 
 export default function ChatHeader() {
+  const navigate = useNavigate();
+
   return (
     <div className={styles.chatPageHeader}>
       <div className={styles.chatPageHeaderLeft}>
-        <button className={styles.chatPageBackButton} aria-label="Voltar">
+        <button className={styles.chatPageBackButton} aria-label="Voltar" onClick={() => navigate('/direct')}>
           <img src={backIcon} alt="Voltar" />
         </button>
 

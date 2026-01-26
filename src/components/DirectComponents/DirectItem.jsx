@@ -1,12 +1,21 @@
+import { useNavigate } from "react-router-dom";
 import styles from "./DirectItem.module.css";
-import av1 from "../../assets/direct/av-fallback-3.jpg";
-import av2 from "../../assets/direct/av-fallback-8.jpg";
-import av3 from "../../assets/direct/av-fallback-10.jpg";
-import av4 from "../../assets/direct/av-fallback-11.jpg";
-import av5 from "../../assets/direct/av-fallback-2.jpg";
+import chat1Av from "../../assets/direct/chat1.png";
+import av7 from "../../assets/direct/av-fallback-7.jpg";
+import av3 from "../../assets/direct/av-fallback-3.jpg";
+import chat2Av from "../../assets/direct/chat2.png";
+import chat3Av from "../../assets/direct/chat3.png";
+import av9 from "../../assets/direct/av-fallback-9.jpg";
+import av10 from "../../assets/direct/av-fallback-10.jpg";
+import av12 from "../../assets/direct/av-fallback-12.jpg";
+import av4 from "../../assets/direct/av-fallback-4.jpg";
+import av11 from "../../assets/direct/av-fallback-11.jpg";
+import av8 from "../../assets/direct/av-fallback-8.jpg";
 import av6 from "../../assets/direct/av-fallback-6.jpg";
 
 export default function DirectItem() {
+  const navigate = useNavigate();
+
   return (
     <>
       {/* SVG — NÃO MEXER (MANTER EXATAMENTE IGUAL) */}
@@ -21,21 +30,20 @@ export default function DirectItem() {
         </symbol>
       </svg>
 
-      {/* ===== 4 CHATS NORMAIS ===== */}
-      
+      {/* ===== 5 CHATS CLICÁVEIS ===== */}
+
       {/* CHAT 1 — UNREAD */}
-      <div className={`${styles.chatItem} ${styles.chatUnread}`}>
+      <div className={`${styles.chatItem} ${styles.chatUnread}`} onClick={() => navigate('/chat1')} style={{ cursor: 'pointer' }}>
         <div className={styles.chatAvatarContainer}>
           <div className={styles.chatAvatarWrapper}>
-            <img className={`${styles.chatPhoto} ${styles.blurred}`} src={av1} alt="" />
+            <img className={`${styles.chatPhoto} ${styles.blurred}`} src={chat1Av} alt="" />
           </div>
         </div>
         <div className={styles.chatContent}>
-          <h3 className={styles.chatName}>Jo*******</h3>
+          <h3 className={styles.chatName}>Jo*****</h3>
           <div className={styles.chatMessageRow}>
-            <span className={styles.chatMessageText}>G adivinha o que vc esqueceu aqui…</span>
-            <span> · </span>
-            <span className={styles.chatTime}>Agora</span>
+            <span className={styles.chatMessageText}>G adivinha o que vc esqueceu aqui? kkkkk</span>
+            <span className={styles.chatTime}> · Agora</span>
           </div>
         </div>
         <div className={styles.chatActions}>
@@ -46,21 +54,22 @@ export default function DirectItem() {
         </div>
       </div>
 
-      {/* CHAT 2 */}
-      <div className={styles.chatItem}>
+      {/* CHAT 2 — UNREAD */}
+      <div className={`${styles.chatItem} ${styles.chatUnread}`} onClick={() => navigate('/chat2')} style={{ cursor: 'pointer' }}>
         <div className={styles.chatAvatarContainer}>
           <div className={styles.chatAvatarWrapper}>
-            <img className={`${styles.chatPhoto} ${styles.blurred}`} src={av2} alt="" />
+            <img className={`${styles.chatPhoto} ${styles.blurred}`} src={av7} alt="" />
           </div>
         </div>
         <div className={styles.chatContent}>
-          <h3 className={styles.chatName}>Edu*****</h3>
+          <h3 className={styles.chatName}>Mel*****</h3>
           <div className={styles.chatMessageRow}>
-            <span className={styles.chatMessageText}>Encaminhou um reel de jonas…</span>
+            <span className={styles.chatMessageText}>Encaminhou um reel de jonas.milgrau</span>
             <span className={styles.chatTime}> · 33 min</span>
           </div>
         </div>
         <div className={styles.chatActions}>
+          <span className={styles.chatUnreadDot} />
           <svg className={styles.chatCameraIcon} width="19.2" height="19.2">
             <use href="#camera-icon" />
           </svg>
@@ -68,14 +77,14 @@ export default function DirectItem() {
       </div>
 
       {/* CHAT 3 */}
-      <div className={styles.chatItem}>
+      <div className={styles.chatItem} onClick={() => navigate('/chat3')} style={{ cursor: 'pointer' }}>
         <div className={styles.chatAvatarContainer}>
           <div className={styles.chatAvatarWrapper}>
             <img className={`${styles.chatPhoto} ${styles.blurred}`} src={av3} alt="" />
           </div>
         </div>
         <div className={styles.chatContent}>
-          <h3 className={styles.chatName}>Fel*****</h3>
+          <h3 className={styles.chatName}>Ped*****</h3>
           <div className={styles.chatMessageRow}>
             <span className={styles.chatMessageText}>Blz depois a gente se fala</span>
             <span className={styles.chatTime}> · 2 h</span>
@@ -89,10 +98,10 @@ export default function DirectItem() {
       </div>
 
       {/* CHAT 4 */}
-      <div className={styles.chatItem}>
+      <div className={styles.chatItem} onClick={() => navigate('/chat4')} style={{ cursor: 'pointer' }}>
         <div className={styles.chatAvatarContainer}>
           <div className={styles.chatAvatarWrapper}>
-            <img className={`${styles.chatPhoto} ${styles.blurred}`} src={av4} alt="" />
+            <img className={`${styles.chatPhoto} ${styles.blurred}`} src={chat2Av} alt="" />
           </div>
         </div>
         <div className={styles.chatContent}>
@@ -109,20 +118,42 @@ export default function DirectItem() {
         </div>
       </div>
 
-      {/* ===== 12 CHATS BLOQUEADOS COM TEXTOS DIFERENTES ===== */}
+      {/* CHAT 5 — UNREAD */}
+      <div className={`${styles.chatItem} ${styles.chatUnread}`} onClick={() => navigate('/chat5')} style={{ cursor: 'pointer' }}>
+        <div className={styles.chatAvatarContainer}>
+          <div className={styles.chatAvatarWrapper}>
+            <img className={`${styles.chatPhoto} ${styles.blurred}`} src={chat3Av} alt="" />
+          </div>
+        </div>
+        <div className={styles.chatContent}>
+          <h3 className={styles.chatName}>𝕭𝖗𝖚****</h3>
+          <div className={styles.chatMessageRow}>
+            <span className={styles.chatMessageText}>4 novas mensagens</span>
+            <span className={styles.chatTime}> · 22 h</span>
+          </div>
+        </div>
+        <div className={styles.chatActions}>
+          <span className={styles.chatUnreadDot} />
+          <svg className={styles.chatCameraIcon} width="19.2" height="19.2">
+            <use href="#camera-icon" />
+          </svg>
+        </div>
+      </div>
+
+      {/* ===== CHATS BLOQUEADOS (COM CADEADO) ===== */}
       {[
-        { name: "Hei*****", avatar: av5, time: "2 d", message: "Curtiu sua foto" },
-        { name: "Mat*****", avatar: av6, time: "3 d", message: "Respondeu seu story" },
-        { name: "Dan*****", avatar: av1, time: "3 d", message: "Enviou um áudio" },
-        { name: "Car*****", avatar: av2, time: "4 d", message: "Reagiu 😅 ao story" },
-        { name: "Leo*****", avatar: av3, time: "4 d", message: "Compartilhou um post" },
-        { name: "Raf*****", avatar: av4, time: "5 d", message: "Marcou você em um comentário" },
-        { name: "Gui*****", avatar: av5, time: "5 d", message: "Respondeu com 👍" },
-        { name: "Bru*****", avatar: av6, time: "6 d", message: "Seguiu você" },
-        { name: "Jon*****", avatar: av1, time: "6 d", message: "Enviou uma solicitação" },
-        { name: "Vit*****", avatar: av2, time: "1 sem", message: "Curtiu sua mensagem" },
-        { name: "Ali*****", avatar: av3, time: "1 sem", message: "Enviou um link" },
-        { name: "Mar*****", avatar: av4, time: "2 sem", message: "Reagiu ❤️ à mensagem" },
+        { name: "The*****", avatar: av9, time: "2 d", message: "Enviou um reel de dr.diegooficial" },
+        { name: "Bea*****", avatar: av10, time: "2 d", message: "Enviado sexta-feira" },
+        { name: "Sop*****", avatar: av12, time: "2 d", message: "Enviou uma mensagem de voz" },
+        { name: "Lau*****", avatar: av4, time: "2 d", message: "kkkkkkkkkk" },
+        { name: "Enz*****", avatar: av11, time: "2 d", message: "Curtiu sua mensagem" },
+        { name: "Júl*****", avatar: av8, time: "3 d", message: "🔥🔥" },
+        { name: "Fer*****", avatar: av6, time: "3 d", message: "Enviado quinta-feira" },
+        { name: "Mel*****", avatar: av9, time: "3 d", message: "Enviado segunda-feira" },
+        { name: "Ped*****", avatar: av10, time: "4 d", message: "Delícia você 😈 😈" },
+        { name: "Fel*****", avatar: av11, time: "4 d", message: "Curtiu sua mensagem" },
+        { name: "Dan*****", avatar: av4, time: "6 d", message: "Enviado quinta-feira" },
+        { name: "Fel*****", avatar: av8, time: "1 sem", message: "Respondeu com 👍" },
       ].map(({ name, avatar, time, message }, i) => (
         <div className={`${styles.chatItem} ${styles.chatLocked}`} key={i}>
           <div className={styles.chatAvatarContainer}>
