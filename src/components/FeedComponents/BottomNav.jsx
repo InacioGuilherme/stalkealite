@@ -1,4 +1,4 @@
-import "./BottomNav.css";
+import styles from "./BottomNav.module.css";
 
 import homeIcon from "../../assets/casa.svg";
 import searchIcon from "../../assets/lupa.svg";
@@ -7,25 +7,24 @@ import profileIcon from "../../assets/perfil-sem-foto.jpeg";
 
 export default function BottomNav() {
   return (
-    <nav className="bottom-nav">
-      <button className="nav-btn">
+    <nav className={styles.bottomNav}>
+      <button className={styles.navBtn}>
         <img src={homeIcon} alt="Home" />
       </button>
 
-      <button className="nav-btn">
+      <button className={styles.navBtn}>
         <img src={searchIcon} alt="Buscar" />
       </button>
 
-<button className="nav-btn nav-plus" aria-label="Criar">
-  <span className="plus-char">+</span>
-</button>
+      <button className={`${styles.navBtn} ${styles.navPlus}`} aria-label="Criar">
+        <span className={styles.plusChar}>+</span>
+      </button>
 
-
-      <button className="nav-btn">
+      <button className={styles.navBtn}>
         <img src={reelsIcon} alt="Reels" />
       </button>
 
-      <button className="nav-btn profile">
+      <button className={`${styles.navBtn} ${styles.profile}`}>
         <img src={profileIcon} alt="Perfil" />
       </button>
     </nav>

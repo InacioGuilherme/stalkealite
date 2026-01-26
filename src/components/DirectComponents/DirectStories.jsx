@@ -1,4 +1,4 @@
-import "./DirectStories.css";
+import styles from "./DirectStories.module.css";
 
 import perfilEspionado from "../../assets/direct/perfil-sem-foto.jpeg";
 import avatar1 from "../../assets/direct/av-fallback-1.jpg";
@@ -21,9 +21,9 @@ const MusicNote = ({ music }) => {
   const isShortTitle = music.title === "APT.";
 
   return (
-    <div className="music-note-content">
-      <div className="music-header">
-        <div className="music-icon">
+    <div className={styles.musicNoteContent}>
+      <div className={styles.musicHeader}>
+        <div className={styles.musicIcon}>
           <svg viewBox="0 0 24 30" width="8" height="10">
             <rect height="19" rx="2" width="4" y="5" />
             <rect height="21" rx="2" width="4" x="10" y="4" />
@@ -32,18 +32,18 @@ const MusicNote = ({ music }) => {
         </div>
 
         {isShortTitle ? (
-          <span className="music-title">APT.</span>
+          <span className={styles.musicTitle}>APT.</span>
         ) : (
-          <div className="music-title-container">
-            <span className="music-title scrolling">
+          <div className={styles.musicTitleContainer}>
+            <span className={`${styles.musicTitle} ${styles.scrolling}`}>
               {music.title}
-              <span className="music-gap">{music.title}</span>
+              <span className={styles.musicGap}>{music.title}</span>
             </span>
           </div>
         )}
       </div>
 
-      <span className="music-artist">{music.artist}</span>
+      <span className={styles.musicArtist}>{music.artist}</span>
     </div>
   );
 };
@@ -97,36 +97,36 @@ const STORIES = [
 
 export default function DirectStories() {
   return (
-    <div className="direct-stories">
-      <div className="stories-wrapper">
-        <div className="stories-scroll">
+    <div className={styles.directStories}>
+      <div className={styles.storiesWrapper}>
+        <div className={styles.storiesScroll}>
           {STORIES.map((story, index) => (
-            <div className="story-card" key={index}>
+            <div className={styles.storyCard} key={index}>
               {/* NOTA (overlay absoluto, SEM quebrar layout) */}
-              <div className={`story-note ${story.isMusicNote ? "music" : ""}`}>
+              <div className={`${styles.storyNote} ${story.isMusicNote ? styles.music : ""}`}>
                 {story.isMusicNote ? (
                   <MusicNote music={story.music} />
                 ) : (
-                  <span className="story-note-text">
+                  <span className={styles.storyNoteText}>
                     {story.isOwnStory ? "Conte as novidades" : story.note}
                   </span>
                 )}
               </div>
 
               {/* AVATAR */}
-              <div className={`story-avatar ${story.blurred ? "blurred" : ""}`}>
+              <div className={`${styles.storyAvatar} ${story.blurred ? styles.blurred : ""}`}>
                 <img src={story.avatar} alt={story.name} />
               </div>
 
               {/* USERNAME */}
-              <span className={`story-username ${story.isOwnStory ? "own" : ""}`}>
+              <span className={`${styles.storyUsername} ${story.isOwnStory ? styles.own : ""}`}>
                 {story.name}
               </span>
             </div>
           ))}
         </div>
 
-        <div className="stories-gradient" />
+        <div className={styles.storiesGradient} />
       </div>
     </div>
   );

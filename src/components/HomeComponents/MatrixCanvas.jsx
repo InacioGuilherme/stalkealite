@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from 'react';
+import styles from './MatrixCanvas.module.css';
 
 const MatrixCanvas = () => {
   const canvasRef = useRef(null);
@@ -47,7 +48,7 @@ const MatrixCanvas = () => {
     };
   }, []);
 
-  return <canvas ref={canvasRef} className="matrix-canvas" />;
+  return <canvas ref={canvasRef} className={styles.matrixCanvas} />;
 };
 
 export default MatrixCanvas;

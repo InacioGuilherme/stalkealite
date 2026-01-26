@@ -1,24 +1,24 @@
-import "./FeedHeader.css";
+import styles from "./FeedHeader.module.css";
 import instaLogo from "../../assets/logo-insta.png";
 import heartIcon from "../../assets/coracao.svg";
 import sendIcon from "../../assets/enviar.svg";
 
 export default function FeedHeader() {
   return (
-    <header className="feed-header">
-      <div className="feed-header-left">
-        <img src={instaLogo} alt="Instagram" className="feed-logo" />
+    <header className={styles.feedHeader}>
+      <div className={styles.feedHeaderLeft}>
+        <img src={instaLogo} alt="Instagram" className={styles.feedLogo} />
       </div>
 
-      <div className="feed-header-right">
-        <button className="icon-button">
+      <div className={styles.feedHeaderRight}>
+        <button className={styles.iconButton}>
           <img src={heartIcon} alt="Curtidas" />
-          <span className="notification-dot" />
+          <span className={styles.notificationDot} />
         </button>
 
-        <button className="icon-button">
+        <button className={styles.iconButton}>
           <img src={sendIcon} alt="Directs" />
-          <span className="notification-badge">2</span>
+          <span className={styles.notificationBadge}>2</span>
         </button>
       </div>
     </header>

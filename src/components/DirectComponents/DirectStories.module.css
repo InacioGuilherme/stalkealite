@@ -2,7 +2,7 @@
    DIRECT STORIES
    =============================== */
 
-.direct-stories {
+.directStories {
   position: relative;
 }
 
@@ -10,10 +10,9 @@
    WRAPPER (NÃO CORTA NOTA)
    =============================== */
 
-.stories-wrapper {
+.storiesWrapper {
   position: relative;
   width: 100%;
-
   overflow-x: hidden;
   overflow-y: visible;
 }
@@ -22,21 +21,18 @@
    SCROLL HORIZONTAL
    =============================== */
 
-.stories-scroll {
+.storiesScroll {
   display: flex;
   gap: 24px;
   padding: 0px 16px 0;
-
   overflow-x: auto;
   overflow-y: visible;
-
   scrollbar-width: none;
-
   width: calc(100% + 32px);
   margin-left: -16px;
 }
 
-.stories-scroll::-webkit-scrollbar {
+.storiesScroll::-webkit-scrollbar {
   display: none;
 }
 
@@ -44,15 +40,13 @@
    STORY CARD
    =============================== */
 
-.story-card {
+.storyCard {
   position: relative;
   width: 82px;
   flex-shrink: 0;
-
   display: flex;
   flex-direction: column;
   align-items: center;
-
   padding-top: 42px;
   overflow: visible;
 }
@@ -61,25 +55,24 @@
    AVATAR
    =============================== */
 
-.story-avatar {
+.storyAvatar {
   width: 80px;
   height: 80px;
   border-radius: 50%;
   background: rgb(31, 41, 55);
-
   overflow: hidden;
   position: relative;
   z-index: 2;
 }
 
-.story-avatar img {
+.storyAvatar img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   opacity: 0.85;
 }
 
-.story-avatar.blurred img {
+.storyAvatar.blurred img {
   filter: blur(5px);
 }
 
@@ -87,20 +80,18 @@
    USERNAME
    =============================== */
 
-.story-username {
-
+.storyUsername {
   font-size: 12.5px;
   color: rgb(209, 213, 219);
-
   max-width: 82px;
   text-align: center;
-
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  margin-top: 8px;
 }
 
-.story-username.own {
+.storyUsername.own {
   color: #9ca3af;
 }
 
@@ -108,32 +99,24 @@
    STORY NOTE (BASE)
    =============================== */
 
-.story-note {
+.storyNote {
   position: absolute;
   top: 18px;
   left: 50%;
   transform: translateX(-50%);
-
   z-index: 3;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   background: rgba(37, 40, 45, 0.95);
   border-radius: 14px;
   border: 1px solid rgba(249, 249, 249, 0.14);
-
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-
   padding: 5px 9px;
-
   width: 88px;
   max-width: 88px;
-
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.22);
-
   pointer-events: none;
   will-change: transform;
 }
@@ -142,21 +125,17 @@
    TEXTO DA NOTA
    =============================== */
 
-.story-note-text {
+.storyNoteText {
   font-size: 9.8px;
   font-weight: 500;
   color: #f9f9f9;
-
   line-height: 1.15;
   text-align: center;
-
   white-space: normal;
   overflow: hidden;
-
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
-
   word-break: break-word;
 }
 
@@ -164,12 +143,12 @@
    SUA NOTA (MAIS DISCRETA)
    =============================== */
 
-.story-card:first-child .story-note {
+.storyCard:first-child .storyNote {
   background: rgba(32, 35, 39, 0.9);
   border-color: rgba(255, 255, 255, 0.08);
 }
 
-.story-card:first-child .story-note-text {
+.storyCard:first-child .storyNoteText {
   color: #c7c7c7;
   font-weight: 400;
 }
@@ -178,32 +157,28 @@
    NOTA DE MÚSICA (CORRIGIDA)
    =============================== */
 
-.story-note.music {
+.storyNote.music {
   top: 14px;
   transform: translateX(-50%) translateY(-2px);
-
   width: 120px;
   max-width: 100px;
-
   padding: 4px 10px;
-
   justify-content: flex-start;
 }
 
 /* Conteúdo da música */
-.music-note-content {
+.musicNoteContent {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1px;
   width: 100%;
-
   max-height: 34px;
   overflow: hidden;
 }
 
 /* Header */
-.music-header {
+.musicHeader {
   display: flex;
   align-items: center;
   gap: 6px;
@@ -211,44 +186,48 @@
 }
 
 /* Ícone */
-.music-icon {
+.musicIcon {
   flex-shrink: 0;
 }
 
-.music-icon svg {
+.musicIcon svg {
   fill: #f9f9f9;
 }
 
 /* Título */
-.music-title-container {
+.musicTitleContainer {
   overflow: hidden;
   white-space: nowrap;
   max-width: 64px;
   flex: 1;
 }
 
-.music-title {
+.musicTitle {
   font-size: 9.7px;
   font-weight: 600;
   color: #f9f9f9;
   white-space: nowrap;
 }
 
-.music-title.scrolling {
+.musicTitle.scrolling {
   display: inline-block;
   animation: scrollText 8s linear infinite;
 }
 
+/* Gap para animação */
+.musicGap {
+  display: inline-block;
+  width: 30px;
+}
+
 /* Artista */
-.music-artist {
+.musicArtist {
   margin-top: -2px;
   font-size: 9.3px;
   color: rgba(249, 249, 249, 0.65);
-
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-
   width: 100%;
   text-align: center;
 }
@@ -257,7 +236,7 @@
    GRADIENTE LATERAL
    =============================== */
 
-.stories-gradient {
+.storiesGradient {
   position: absolute;
   top: 0;
   right: 0;
@@ -280,8 +259,3 @@
     transform: translateX(-100px);
   }
 }
-
-/* ======================================================
-   AJUSTE FINAL — POSIÇÃO DA NOTA DE MÚSICA
-   ====================================================== */
-

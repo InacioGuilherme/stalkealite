@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './ConfirmModal.module.css';
 
 const ConfirmModal = ({
   showConfirmModal,
@@ -23,21 +24,21 @@ const ConfirmModal = ({
   };
 
   return (
-    <div className="modal-overlay" onClick={onClose}>
-      <div className="confirm-modal" onClick={(e) => e.stopPropagation()}>
+    <div className={styles.modalOverlay} onClick={onClose}>
+      <div className={styles.confirmModal} onClick={(e) => e.stopPropagation()}>
         {/* Título */}
-        <div className="modal-header">
-          <h3 className="modal-title">Confirme o Instagram</h3>
-          <p className="modal-subtitle">
-            Você deseja espionar o perfil <span className="highlight-username">@{username}</span>?
+        <div className={styles.modalHeader}>
+          <h3 className={styles.modalTitle}>Confirme o Instagram</h3>
+          <p className={styles.modalSubtitle}>
+            Você deseja espionar o perfil <span className={styles.highlightUsername}>@{username}</span>?
           </p>
         </div>
 
         {/* Layout Instagram: Foto + Stats em linha */}
-        <div className="profile-preview">
+        <div className={styles.profilePreview}>
           {/* Foto à esquerda */}
-          <div className="profile-image-container">
-            <div className="profile-image-wrapper">
+          <div className={styles.profileImageContainer}>
+            <div className={styles.profileImageWrapper}>
               <img 
                 src={modalProfileData.profileImageUrl} 
                 alt="Foto de perfil" 
@@ -46,7 +47,7 @@ const ConfirmModal = ({
                   e.target.nextElementSibling.style.display = 'flex';
                 }}
               />
-              <div className="profile-image-fallback">
+              <div className={styles.profileImageFallback}>
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                 </svg>
@@ -55,25 +56,25 @@ const ConfirmModal = ({
           </div>
 
           {/* Stats à direita */}
-          <div className="profile-stats-horizontal">
-            <div className="stat-item">
-              <p className="stat-number">{formatNumber(modalProfileData.postCount)}</p>
-              <p className="stat-label">posts</p>
+          <div className={styles.profileStatsHorizontal}>
+            <div className={styles.statItem}>
+              <p className={styles.statNumber}>{formatNumber(modalProfileData.postCount)}</p>
+              <p className={styles.statLabel}>posts</p>
             </div>
-            <div className="stat-item">
-              <p className="stat-number">{formatNumber(modalProfileData.followersCount)}</p>
-              <p className="stat-label">seguidores</p>
+            <div className={styles.statItem}>
+              <p className={styles.statNumber}>{formatNumber(modalProfileData.followersCount)}</p>
+              <p className={styles.statLabel}>seguidores</p>
             </div>
-            <div className="stat-item">
-              <p className="stat-number">{formatNumber(modalProfileData.followingCount)}</p>
-              <p className="stat-label">seguindo</p>
+            <div className={styles.statItem}>
+              <p className={styles.statNumber}>{formatNumber(modalProfileData.followingCount)}</p>
+              <p className={styles.statLabel}>seguindo</p>
             </div>
           </div>
         </div>
 
         {/* Bio */}
         {modalProfileData.bio && (
-          <div className="profile-bio">
+          <div className={styles.profileBio}>
             <p>{modalProfileData.bio.split('\n').map((line, i) => (
               <React.Fragment key={i}>
                 {line}
@@ -84,8 +85,8 @@ const ConfirmModal = ({
         )}
 
         {/* Aviso de Limite */}
-        <div className="modal-warning">
-          <div className="warning-content">
+        <div className={styles.modalWarning}>
+          <div className={styles.warningContent}>
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5">
               <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z" />
             </svg>
@@ -96,19 +97,19 @@ const ConfirmModal = ({
         </div>
 
         {/* Botões */}
-        <div className="modal-buttons">
+        <div className={styles.modalButtons}>
           <button 
-            className="cancel-btn"
+            className={styles.cancelBtn}
             onClick={onClose}
           >
             Corrigir @
           </button>
           <button     
-            className="confirm-btn"
+            className={styles.confirmBtn}
             onClick={onConfirm}
           >
             Confirmar
-            <svg className="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className={styles.arrowIcon} fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
             </svg>
           </button>

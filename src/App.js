@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import Feed from "./pages/Feed";
 import Direct from "./pages/Direct";
 import Chat1 from "./pages/Chat1";
+import "./index.css"
 function App() {
   return (
     <BrowserRouter>

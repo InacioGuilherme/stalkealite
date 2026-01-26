@@ -1,7 +1,6 @@
-import "./FeedPost.css";
+import styles from "./FeedPost.module.css";
 
 import avatar from "../../assets/perfil-sem-foto.jpeg";
-
 import likeIcon from "../../assets/coracao.svg";
 import commentIcon from "../../assets/comentario.svg";
 import repostIcon from "../../assets/repost.svg";
@@ -10,25 +9,25 @@ import saveIcon from "../../assets/salvar.svg";
 
 export default function FeedPost() {
   return (
-    <article className="feed-post">
+    <article className={styles.feedPost}>
 
       {/* HEADER */}
-      <header className="post-header">
-        <div className="post-user">
-          <img src={avatar} alt="Usuário" className="post-avatar" />
-          <span className="post-username">And*****</span>
+      <header className={styles.postHeader}>
+        <div className={styles.postUser}>
+          <img src={avatar} alt="Usuário" className={styles.postAvatar} />
+          <span className={styles.postUsername}>And*****</span>
         </div>
 
-        <button className="post-menu">⋯</button>
+        <button className={styles.postMenu}>⋯</button>
       </header>
 
       {/* CONTEÚDO BLOQUEADO */}
-      <div className="post-image-container">
-        <div className="post-restricted">
+      <div className={styles.postImageContainer}>
+        <div className={styles.postRestricted}>
 
           {/* CADEADO (SVG inline igual ao original) */}
           <svg
-            className="restricted-icon"
+            className={styles.restrictedIcon}
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -41,42 +40,42 @@ export default function FeedPost() {
             />
           </svg>
 
-          <p className="restricted-title">Conteúdo restrito</p>
-          <p className="restricted-time">Agora · 16:53</p>
+          <p className={styles.restrictedTitle}>Conteúdo restrito</p>
+          <p className={styles.restrictedTime}>Agora · 16:53</p>
         </div>
       </div>
 
       {/* AÇÕES */}
-      <div className="post-actions">
-        <div className="post-actions-left">
+      <div className={styles.postActions}>
+        <div className={styles.postActionsLeft}>
 
-          <div className="action-item">
+          <div className={styles.actionItem}>
             <img src={likeIcon} alt="Curtir" />
             <span>204</span>
           </div>
 
-          <div className="action-item">
+          <div className={styles.actionItem}>
             <img src={commentIcon} alt="Comentar" />
             <span>73</span>
           </div>
 
-          <div className="action-item">
+          <div className={styles.actionItem}>
             <img src={repostIcon} alt="Repostar" />
           </div>
 
-          <div className="action-item">
+          <div className={styles.actionItem}>
             <img src={sendIcon} alt="Enviar" />
           </div>
 
         </div>
 
-        <div className="action-item">
+        <div className={styles.actionItem}>
           <img src={saveIcon} alt="Salvar" />
         </div>
       </div>
 
       {/* TEMPO */}
-      <div className="post-time">Agora</div>
+      <div className={styles.postTime}>Agora</div>
 
     </article>
   );

@@ -1,10 +1,10 @@
-import "./DirectSearch.css";
+import styles from "./DirectSearch.module.css";
 
 export default function DirectSearch() {
   return (
-    <div className="direct-search-wrapper">
-      <div className="direct-search">
-        <span className="direct-search-icon">
+    <div className={styles.directSearchWrapper}>
+      <div className={styles.directSearch}>
+        <span className={styles.directSearchIcon}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -23,7 +23,7 @@ export default function DirectSearch() {
 
         <input
           type="text"
-          className="direct-search-input"
+          className={styles.directSearchInput}
           placeholder="Interaja com a Meta AI ou pesquise"
         />
       </div>

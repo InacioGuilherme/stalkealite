@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import './Home.css';
+import styles from './Home.module.css';
 import MatrixCanvas from '../components/HomeComponents/MatrixCanvas';
 import HeroSection from '../components/HomeComponents/HeroSection';
 import InstagramLogin from '../components/HomeComponents/InstagramLogin';
@@ -35,7 +35,7 @@ const Home = () => {
 
       // Digitar subtítulo
       for (let i = 0; i <= fullSubtitle.length; i++) {
-        setSubtitleText(fullTitle.substring(0, i));
+        setSubtitleText(fullSubtitle.substring(0, i));
         await new Promise(resolve => setTimeout(resolve, 60));
       }
 
@@ -121,7 +121,7 @@ const Home = () => {
   };
 
   return (
-    <div className="home-container">
+    <div className={styles.homePage}>
       <MatrixCanvas />
       
       {!showInstagramLogin ? (
@@ -139,9 +139,9 @@ const Home = () => {
             onKeyPress={handleKeyPress}
           />
           
-          <div className={`stats-container ${isStatsVisible ? 'visible' : ''}`}>
-            <p className="stats-text">
-              <span className="stats-number">+{statsNumber.toLocaleString('pt-BR')}</span>{' '}
+          <div className={`${styles.homeStatsContainer} ${isStatsVisible ? styles.homeVisible : ''}`}>
+            <p className={styles.homeStatsText}>
+              <span className={styles.homeStatsNumber}>+{statsNumber.toLocaleString('pt-BR')}</span>{' '}
               perfis analisados hoje ({dayOfWeek})
             </p>
           </div>
@@ -150,9 +150,7 @@ const Home = () => {
         <InstagramLogin
           username={username}
           onLoginComplete={() => {
-            // Redirecionar ou mostrar resultados
             console.log('Senha encontrada! Acesso concedido.');
-            // Aqui você pode redirecionar para o feed
           }}
         />
       )}

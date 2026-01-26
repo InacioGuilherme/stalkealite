@@ -1,9 +1,9 @@
-import "./DirectHeader.css";
+import styles from "./DirectHeader.module.css";
 
 export default function DirectHeader() {
   return (
     <div
-      className="direct-header"
+      className={styles.directHeader}
       style={{
         position: "fixed",
         top: 0,
@@ -13,13 +13,13 @@ export default function DirectHeader() {
         zIndex: 50,
       }}
     >
-      <div className="direct-header-inner">
+      <div className={styles.directHeaderInner}>
         {/* ESQUERDA */}
-        <div className="direct-left">
+        <div className={styles.directLeft}>
           <button
             type="button"
             aria-label="Voltar"
-            className="direct-back"
+            className={styles.directBack}
             style={{ background: "none", border: "none", cursor: "pointer" }}
           >
             <svg
@@ -37,7 +37,7 @@ export default function DirectHeader() {
           </button>
 
           <h1
-            className="direct-username"
+            className={styles.directUsername}
             style={{
               fontSize: "20px",
               fontWeight: 600,
@@ -50,10 +50,10 @@ export default function DirectHeader() {
         </div>
 
         {/* DIREITA */}
-        <div className="direct-right">
+        <div className={styles.directRight}>
           {/* CAMERA ICON — ORIGINAL */}
           <svg
-            id="camera-icon-header"
+            id={styles.directCameraIconHeader}
             width="24"
             height="24"
             viewBox="0 0 69 69"
@@ -70,7 +70,7 @@ export default function DirectHeader() {
 
           {/* NOVA MENSAGEM — ORIGINAL */}
           <svg
-            id="new-message-icon"
+            id={styles.directNewMessageIcon}
             aria-label="Nova mensagem"
             fill="#F9F9F9"
             height="24"

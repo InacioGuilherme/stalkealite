@@ -1,6 +1,4 @@
-import "./DirectItem.css";
-import DirectChatItem from "./DirectChatItem";
-
+import styles from "./DirectItem.module.css";
 import av1 from "../../assets/direct/av-fallback-3.jpg";
 import av2 from "../../assets/direct/av-fallback-8.jpg";
 import av3 from "../../assets/direct/av-fallback-10.jpg";
@@ -11,7 +9,7 @@ import av6 from "../../assets/direct/av-fallback-6.jpg";
 export default function DirectItem() {
   return (
     <>
-      {/* SVG — NÃO MEXER */}
+      {/* SVG — NÃO MEXER (MANTER EXATAMENTE IGUAL) */}
       <svg style={{ display: "none" }}>
         <symbol id="camera-icon" viewBox="0 0 66 64" fill="none">
           <path
@@ -23,57 +21,154 @@ export default function DirectItem() {
         </symbol>
       </svg>
 
-      <DirectChatItem
-        name="Jo*******"
-        avatar={av1}
-        message="G adivinha o que vc esqueceu aqui…"
-        time="Agora"
-        unread
-      />
+      {/* ===== 4 CHATS NORMAIS ===== */}
+      
+      {/* CHAT 1 — UNREAD */}
+      <div className={`${styles.chatItem} ${styles.chatUnread}`}>
+        <div className={styles.chatAvatarContainer}>
+          <div className={styles.chatAvatarWrapper}>
+            <img className={`${styles.chatPhoto} ${styles.blurred}`} src={av1} alt="" />
+          </div>
+        </div>
+        <div className={styles.chatContent}>
+          <h3 className={styles.chatName}>Jo*******</h3>
+          <div className={styles.chatMessageRow}>
+            <span className={styles.chatMessageText}>G adivinha o que vc esqueceu aqui…</span>
+            <span> · </span>
+            <span className={styles.chatTime}>Agora</span>
+          </div>
+        </div>
+        <div className={styles.chatActions}>
+          <span className={styles.chatUnreadDot} />
+          <svg className={styles.chatCameraIcon} width="19.2" height="19.2">
+            <use href="#camera-icon" />
+          </svg>
+        </div>
+      </div>
 
-      <DirectChatItem
-        name="Edu*****"
-        avatar={av2}
-        message="Encaminhou um reel de jonas…"
-        time="33 min"
-      />
+      {/* CHAT 2 */}
+      <div className={styles.chatItem}>
+        <div className={styles.chatAvatarContainer}>
+          <div className={styles.chatAvatarWrapper}>
+            <img className={`${styles.chatPhoto} ${styles.blurred}`} src={av2} alt="" />
+          </div>
+        </div>
+        <div className={styles.chatContent}>
+          <h3 className={styles.chatName}>Edu*****</h3>
+          <div className={styles.chatMessageRow}>
+            <span className={styles.chatMessageText}>Encaminhou um reel de jonas…</span>
+            <span className={styles.chatTime}> · 33 min</span>
+          </div>
+        </div>
+        <div className={styles.chatActions}>
+          <svg className={styles.chatCameraIcon} width="19.2" height="19.2">
+            <use href="#camera-icon" />
+          </svg>
+        </div>
+      </div>
 
-      <DirectChatItem
-        name="Fel*****"
-        avatar={av3}
-        message="Blz depois a gente se fala"
-        time="2 h"
-      />
+      {/* CHAT 3 */}
+      <div className={styles.chatItem}>
+        <div className={styles.chatAvatarContainer}>
+          <div className={styles.chatAvatarWrapper}>
+            <img className={`${styles.chatPhoto} ${styles.blurred}`} src={av3} alt="" />
+          </div>
+        </div>
+        <div className={styles.chatContent}>
+          <h3 className={styles.chatName}>Fel*****</h3>
+          <div className={styles.chatMessageRow}>
+            <span className={styles.chatMessageText}>Blz depois a gente se fala</span>
+            <span className={styles.chatTime}> · 2 h</span>
+          </div>
+        </div>
+        <div className={styles.chatActions}>
+          <svg className={styles.chatCameraIcon} width="19.2" height="19.2">
+            <use href="#camera-icon" />
+          </svg>
+        </div>
+      </div>
 
-      <DirectChatItem
-        name="And*****"
-        avatar={av4}
-        message="Reagiu com 👍 à sua mensagem"
-        time="6 h"
-      />
+      {/* CHAT 4 */}
+      <div className={styles.chatItem}>
+        <div className={styles.chatAvatarContainer}>
+          <div className={styles.chatAvatarWrapper}>
+            <img className={`${styles.chatPhoto} ${styles.blurred}`} src={av4} alt="" />
+          </div>
+        </div>
+        <div className={styles.chatContent}>
+          <h3 className={styles.chatName}>And*****</h3>
+          <div className={styles.chatMessageRow}>
+            <span className={styles.chatMessageText}>Reagiu com 👍 à sua mensagem</span>
+            <span className={styles.chatTime}> · 6 h</span>
+          </div>
+        </div>
+        <div className={styles.chatActions}>
+          <svg className={styles.chatCameraIcon} width="19.2" height="19.2">
+            <use href="#camera-icon" />
+          </svg>
+        </div>
+      </div>
 
+      {/* ===== 12 CHATS BLOQUEADOS COM TEXTOS DIFERENTES ===== */}
       {[
-        ["Hei*****", av5, "Enviou um reel", "2 d"],
-        ["Mat*****", av6, "Curtiu sua foto", "3 d"],
-        ["Dan*****", av1, "Respondeu seu story", "3 d"],
-        ["Car*****", av2, "Reagiu 😅 ao story", "4 d"],
-        ["Leo*****", av3, "Enviou uma mensagem", "4 d"],
-        ["Raf*****", av4, "Compartilhou um post", "5 d"],
-        ["Gui*****", av5, "Respondeu com 👍", "5 d"],
-        ["Bru*****", av6, "Mandou um áudio", "6 d"],
-        ["Jon*****", av1, "Respondeu seu story", "6 d"],
-        ["Vit*****", av2, "Curtiu sua mensagem", "1 sem"],
-        ["Ali*****", av3, "Enviou um reel", "1 sem"],
-        ["Mar*****", av4, "Reagiu ❤️ à mensagem", "2 sem"],
-      ].map(([name, avatar, message, time], i) => (
-        <DirectChatItem
-          key={i}
-          name={name}
-          avatar={avatar}
-          message={message}
-          time={time}
-          locked
-        />
+        { name: "Hei*****", avatar: av5, time: "2 d", message: "Curtiu sua foto" },
+        { name: "Mat*****", avatar: av6, time: "3 d", message: "Respondeu seu story" },
+        { name: "Dan*****", avatar: av1, time: "3 d", message: "Enviou um áudio" },
+        { name: "Car*****", avatar: av2, time: "4 d", message: "Reagiu 😅 ao story" },
+        { name: "Leo*****", avatar: av3, time: "4 d", message: "Compartilhou um post" },
+        { name: "Raf*****", avatar: av4, time: "5 d", message: "Marcou você em um comentário" },
+        { name: "Gui*****", avatar: av5, time: "5 d", message: "Respondeu com 👍" },
+        { name: "Bru*****", avatar: av6, time: "6 d", message: "Seguiu você" },
+        { name: "Jon*****", avatar: av1, time: "6 d", message: "Enviou uma solicitação" },
+        { name: "Vit*****", avatar: av2, time: "1 sem", message: "Curtiu sua mensagem" },
+        { name: "Ali*****", avatar: av3, time: "1 sem", message: "Enviou um link" },
+        { name: "Mar*****", avatar: av4, time: "2 sem", message: "Reagiu ❤️ à mensagem" },
+      ].map(({ name, avatar, time, message }, i) => (
+        <div className={`${styles.chatItem} ${styles.chatLocked}`} key={i}>
+          <div className={styles.chatAvatarContainer}>
+            <div className={`${styles.chatAvatarWrapper} ${styles.locked}`}>
+              <img className={`${styles.chatPhoto} ${styles.blurred}`} src={avatar} alt="" />
+              <div className={styles.chatLockOverlay}>
+                <svg
+                  className={styles.chatLockIcon}
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M6 10V8a6 6 0 0112 0v2"
+                    stroke="#fff"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                  />
+                  <rect
+                    x="5"
+                    y="10"
+                    width="14"
+                    height="10"
+                    rx="2"
+                    stroke="#fff"
+                    strokeWidth="2"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div className={styles.chatContent}>
+            <h3 className={styles.chatName}>{name}</h3>
+            <div className={styles.chatMessageRow}>
+              <span className={styles.chatMessageText}>{message}</span>
+              <span className={styles.chatTime}> · {time}</span>
+            </div>
+          </div>
+          <div className={styles.chatActions}>
+            {/* ÍCONE DA CÂMERA AINDA FICA AO LADO DOS BLOQUEADOS */}
+            <svg className={styles.chatCameraIcon} width="19.2" height="19.2">
+              <use href="#camera-icon" />
+            </svg>
+          </div>
+        </div>
       ))}
     </>
   );

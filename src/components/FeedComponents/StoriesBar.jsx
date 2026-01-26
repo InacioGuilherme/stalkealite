@@ -1,4 +1,4 @@
-import "./StoriesBar.css";
+import styles from "./StoriesBar.module.css";
 import avatar from "../../assets/perfil-sem-foto.jpeg";
 
 const STORIES = [
@@ -16,35 +16,35 @@ const STORIES = [
 
 export default function StoriesBar() {
   return (
-    <section className="stories-wrapper">
-      <div className="stories-container">
+    <section className={styles.storiesWrapper}>
+      <div className={styles.storiesContainer}>
 
         {/* SEU STORY */}
-        <div className="story-item">
-          <button className="story-button">
-            <div className="story-ring self">
-              <div className="story-avatar">
+        <div className={styles.storyItem}>
+          <button className={styles.storyButton}>
+            <div className={`${styles.storyRing} ${styles.self}`}>
+              <div className={styles.storyAvatar}>
                 <img src={avatar} alt="Seu story" />
               </div>
-              <div className="add-story">
+              <div className={styles.addStory}>
                 <span>+</span>
               </div>
             </div>
           </button>
-          <span className="story-username">Seu story</span>
+          <span className={styles.storyUsername}>Seu story</span>
         </div>
 
         {/* STORIES FAKE (IG-LIKE) */}
         {STORIES.map((story, index) => (
-          <div className="story-item" key={index}>
-            <button className="story-button">
-              <div className={`story-ring ${story.type}`}>
-                <div className="story-avatar">
+          <div className={styles.storyItem} key={index}>
+            <button className={styles.storyButton}>
+              <div className={`${styles.storyRing} ${styles[story.type]}`}>
+                <div className={styles.storyAvatar}>
                   <img src={avatar} alt={story.name} />
                 </div>
               </div>
             </button>
-            <span className="story-username">{story.name}</span>
+            <span className={styles.storyUsername}>{story.name}</span>
           </div>
         ))}
 

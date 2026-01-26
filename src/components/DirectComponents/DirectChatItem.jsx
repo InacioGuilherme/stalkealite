@@ -1,3 +1,5 @@
+import styles from "./DirectChatItem.module.css";
+
 export default function DirectChatItem({
   name,
   avatar,
@@ -8,18 +10,18 @@ export default function DirectChatItem({
 }) {
   return (
     <div
-      className={`chat-item ${unread ? "chat-unread" : ""} ${
-        locked ? "chat-locked" : ""
+      className={`${styles.chatItem} ${unread ? styles.chatUnread : ""} ${
+        locked ? styles.chatLocked : ""
       }`}
     >
-      <div className="chat-avatar-container">
-        <div className={`chat-avatar-wrapper ${locked ? "locked" : ""}`}>
-          <img className="chat-photo blurred" src={avatar} alt="" />
+      <div className={styles.chatAvatarContainer}>
+        <div className={`${styles.chatAvatarWrapper} ${locked ? styles.locked : ""}`}>
+          <img className={`${styles.chatPhoto} ${styles.blurred}`} src={avatar} alt="" />
 
           {locked && (
-            <div className="chat-lock-overlay">
+            <div className={styles.chatLockOverlay}>
               <svg
-                className="chat-lock-icon"
+                className={styles.chatLockIcon}
                 width="18"
                 height="18"
                 viewBox="0 0 24 24"
@@ -46,18 +48,18 @@ export default function DirectChatItem({
         </div>
       </div>
 
-      <div className="chat-content">
-        <h3 className="chat-name">{name}</h3>
-        <div className="chat-message-row">
-          <span className="chat-message-text">{message}</span>
-          <span className="chat-time"> · {time}</span>
+      <div className={styles.chatContent}>
+        <h3 className={styles.chatName}>{name}</h3>
+        <div className={styles.chatMessageRow}>
+          <span className={styles.chatMessageText}>{message}</span>
+          <span className={styles.chatTime}> · {time}</span>
         </div>
       </div>
 
-      <div className="chat-actions">
-        {unread && <span className="chat-unread-dot" />}
+      <div className={styles.chatActions}>
+        {unread && <span className={styles.chatUnreadDot} />}
 
-        <svg className="chat-camera-icon" width="19.2" height="19.2">
+        <svg className={styles.chatCameraIcon} width="19.2" height="19.2">
           <use href="#camera-icon" />
         </svg>
       </div>

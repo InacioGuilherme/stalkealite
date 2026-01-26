@@ -1,4 +1,4 @@
-import "./ChatInput.css";
+import styles from "./ChatInput.module.css";
 
 import cameraIcon from "../../assets/chat/camera.svg";
 import micIcon from "../../assets/chat/microfone.svg";
@@ -8,34 +8,26 @@ import heartIcon from "../../assets/chat/coracao.svg";
 
 export default function ChatInput() {
   return (
-    <div className="message-input-container">
-      <div className="message-input-wrapper">
+    <div className={styles.chatInputContainer}>
+      <div className={styles.chatInputPill}>
         {/* Ícone da câmera (roxinho) */}
-        <div className="message-input-icon camera-icon">
+        <div className={styles.chatInputCamera}>
           <img src={cameraIcon} alt="Câmera" />
         </div>
 
         {/* Campo de texto */}
         <input
           type="text"
-          className="message-input"
+          className={styles.chatInputField}
           placeholder="Mensagem..."
         />
 
         {/* Ações à direita */}
-        <div className="message-input-actions">
-          <div className="input-action-icon">
-            <img src={micIcon} alt="Áudio" />
-          </div>
-          <div className="input-action-icon">
-            <img src={galleryIcon} alt="Galeria" />
-          </div>
-          <div className="input-action-icon">
-            <img src={stickerIcon} alt="Sticker" />
-          </div>
-          <div className="input-action-icon">
-            <img src={heartIcon} alt="Curtir" />
-          </div>
+        <div className={styles.chatInputIcons}>
+          <img src={micIcon} alt="Áudio" />
+          <img src={galleryIcon} alt="Galeria" />
+          <img src={stickerIcon} alt="Sticker" />
+          <img src={heartIcon} alt="Curtir" />
         </div>
       </div>
     </div>

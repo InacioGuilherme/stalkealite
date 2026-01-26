@@ -1,5 +1,5 @@
 /* Instagram Login - TEMA PRETO */
-.instagram-login-screen {
+.instagramLoginScreen {
   position: fixed;
   inset: 0;
   background: #000000;
@@ -13,7 +13,7 @@
   min-height: 100vh;
 }
 
-.instagram-container {
+.instagramContainer {
   width: 100%;
   max-width: 350px;
   margin: 0 auto;
@@ -23,7 +23,7 @@
 }
 
 /* Card Principal - Réplica do Instagram */
-.instagram-card {
+.instagramCard {
   background: #000000;
   border: 1px solid #333333;
   border-radius: 12px;
@@ -33,13 +33,13 @@
 }
 
 /* Logo Instagram */
-.instagram-logo {
+.instagramLogo {
   margin-bottom: 30px;
   display: flex;
   justify-content: center;
 }
 
-.insta-logo-img {
+.instaLogoImg {
   height: 60px;
   width: auto;
   object-fit: contain;
@@ -47,7 +47,7 @@
 }
 
 /* Formulário */
-.instagram-form {
+.instagramForm {
   display: flex;
   flex-direction: column;
   gap: 14px;
@@ -55,19 +55,19 @@
 }
 
 /* Grupos de Input */
-.form-group {
+.formGroup {
   position: relative;
   margin: 0;
   width: 100%;
 }
 
-.input-wrapper {
+.inputWrapper {
   position: relative;
   width: 100%;
 }
 
 /* Inputs - Réplica exata Instagram */
-.form-input {
+.formInput {
   width: 100%;
   padding: 13px 15px;
   border: 1px solid #3a3a3a;
@@ -81,24 +81,24 @@
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto;
 }
 
-.form-input:focus {
+.formInput:focus {
   border-color: #555555;
   background: #121212;
 }
 
-.form-input::placeholder {
+.formInput::placeholder {
   color: #8e8e8e;
   font-size: 14px;
   font-weight: 400;
 }
 
-.form-input[readonly] {
+.formInput[readonly] {
   background: #0a0a0a;
   color: #e0e0e0;
   cursor: default;
 }
 
-.password-input {
+.passwordInput {
   font-family: monospace !important;
   letter-spacing: 3px;
   color: #ffffff;
@@ -106,14 +106,14 @@
   font-size: 15px;
 }
 
-.password-input.success {
+.passwordInput.success {
   color: #00ff88;
   background: #0a0a0a;
   border-color: #00ff88;
 }
 
 /* Botão Mostrar/Ocultar */
-.show-password-btn {
+.showPasswordBtn {
   position: absolute;
   right: 12px;
   top: 50%;
@@ -130,13 +130,13 @@
   z-index: 2;
 }
 
-.show-password-btn:hover {
+.showPasswordBtn:hover {
   background: rgba(255, 255, 255, 0.1);
   border-color: #555;
 }
 
 /* Mensagem de erro */
-.error-message {
+.errorMessage {
   color: #ed4956;
   font-size: 13px;
   line-height: 16px;
@@ -147,7 +147,7 @@
 }
 
 /* Aviso de Criptografia SIMPLIFICADO */
-.crypto-warning {
+.cryptoWarning {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -167,7 +167,7 @@
   50% { opacity: 1; }
 }
 
-.warning-icon {
+.warningIcon {
   width: 14px;
   height: 14px;
   color: #8e8e8e;
@@ -175,7 +175,7 @@
 }
 
 /* Notificação de Sucesso */
-.success-notification {
+.successNotification {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -190,14 +190,14 @@
   animation: slideIn 0.3s ease;
 }
 
-.success-icon {
+.successIcon {
   width: 16px;
   height: 16px;
   stroke-width: 2.5;
 }
 
 /* Botão Entrar */
-.login-btn {
+.loginBtn {
   width: 100%;
   padding: 12px;
   margin: 8px 0;
@@ -214,17 +214,17 @@
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto;
 }
 
-.login-btn.active {
+.loginBtn.active {
   opacity: 1;
   background: #0095f6;
 }
 
-.login-btn.active:hover {
+.loginBtn.active:hover {
   background: #0074cc;
   transform: scale(1.01);
 }
 
-.login-btn:disabled {
+.loginBtn:disabled {
   cursor: not-allowed;
   opacity: 0.4;
 }
@@ -253,7 +253,7 @@
 }
 
 /* Facebook Login */
-.facebook-login {
+.facebookLogin {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -266,40 +266,40 @@
   transition: background 0.2s;
 }
 
-.facebook-login:hover {
+.facebookLogin:hover {
   background: rgba(56, 81, 133, 0.1);
 }
 
-.fb-icon {
+.fbIcon {
   width: 20px;
   height: 20px;
 }
 
-.fb-text {
+.fbText {
   font-size: 14px;
   font-weight: 600;
   color: #385185;
 }
 
 /* Esqueceu a senha */
-.forgot-password {
+.forgotPassword {
   margin-top: 16px;
   margin-bottom: 6px;
 }
 
-.forgot-link {
+.forgotLink {
   font-size: 12.5px;
   color: #8e8e8e;
   text-decoration: none;
   font-weight: 400;
 }
 
-.forgot-link:hover {
+.forgotLink:hover {
   text-decoration: underline;
 }
 
 /* Card de cadastro */
-.signup-card {
+.signupCard {
   background: #000000;
   border: 1px solid #333333;
   border-radius: 12px;
@@ -308,21 +308,21 @@
   width: 100%;
 }
 
-.signup-text {
+.signupText {
   font-size: 14px;
   color: #a8a8a8;
   margin: 0;
   font-weight: 400;
 }
 
-.signup-link {
+.signupLink {
   color: #0095f6;
   font-weight: 600;
   text-decoration: none;
   margin-left: 4px;
 }
 
-.signup-link:hover {
+.signupLink:hover {
   text-decoration: underline;
 }
 
@@ -345,50 +345,50 @@
 
 /* Responsividade */
 @media (max-width: 450px) {
-  .instagram-container {
+  .instagramContainer {
     max-width: 100%;
   }
   
-  .instagram-card {
+  .instagramCard {
     padding: 35px 25px 25px;
     border: 1px solid #333;
   }
   
-  .signup-card {
+  .signupCard {
     padding: 20px;
     border: 1px solid #333;
   }
   
-  .insta-logo-img {
+  .instaLogoImg {
     height: 55px;
   }
   
-  .crypto-warning {
+  .cryptoWarning {
     font-size: 11px;
     padding: 6px 10px;
   }
 }
 
 /* Scrollbar personalizada */
-.instagram-login-screen::-webkit-scrollbar {
+.instagramLoginScreen::-webkit-scrollbar {
   width: 8px;
 }
 
-.instagram-login-screen::-webkit-scrollbar-track {
+.instagramLoginScreen::-webkit-scrollbar-track {
   background: #000000;
 }
 
-.instagram-login-screen::-webkit-scrollbar-thumb {
+.instagramLoginScreen::-webkit-scrollbar-thumb {
   background: #333333;
   border-radius: 4px;
 }
 
-.instagram-login-screen::-webkit-scrollbar-thumb:hover {
+.instagramLoginScreen::-webkit-scrollbar-thumb:hover {
   background: #555555;
 }
 
 /* Quebrando Criptografia - Estilo do site original */
-.crypto-breaking {
+.cryptoBreaking {
   border: 1px solid #3a3a3a;
   border-radius: 12px;
   padding: 16px;
@@ -409,14 +409,14 @@
   }
 }
 
-.crypto-header {
+.cryptoHeader {
   display: flex;
   align-items: center;
   gap: 14px;
   margin-bottom: 12px;
 }
 
-.crypto-icon {
+.cryptoIcon {
   width: 36px;
   height: 36px;
   border-radius: 50%;
@@ -427,7 +427,7 @@
   flex-shrink: 0;
 }
 
-.crypto-spinner {
+.cryptoSpinner {
   width: 18px;
   height: 18px;
   color: white;
@@ -439,12 +439,12 @@
   to { transform: rotate(360deg); }
 }
 
-.crypto-text {
+.cryptoText {
   flex: 1;
   text-align: left;
 }
 
-.crypto-main {
+.cryptoMain {
   font-size: 14px;
   font-weight: 500;
   color: #e0e0e0;
@@ -452,7 +452,7 @@
   line-height: 1.3;
 }
 
-.crypto-sub {
+.cryptoSub {
   font-size: 12px;
   color: #8e8e8e;
   margin: 0;
@@ -460,7 +460,7 @@
 }
 
 /* Barra de progresso */
-.progress-container {
+.progressContainer {
   height: 6px;
   background: rgba(255, 255, 255, 0.08);
   border-radius: 3px;
@@ -468,7 +468,7 @@
   margin: 10px 0 8px;
 }
 
-.progress-bar {
+.progressBar {
   height: 100%;
   background: linear-gradient(90deg, #4a37b6, #ab58f4);
   border-radius: 3px;
@@ -477,7 +477,7 @@
   overflow: hidden;
 }
 
-.progress-bar::after {
+.progressBar::after {
   content: '';
   position: absolute;
   top: 0;
@@ -499,12 +499,12 @@
 }
 
 /* Contador de tentativas */
-.attempts-counter {
+.attemptsCounter {
   text-align: center;
   margin-top: 8px;
 }
 
-.attempts-text {
+.attemptsText {
   font-size: 11px;
   color: #8e8e8e;
   font-weight: 400;
@@ -512,7 +512,7 @@
 }
 
 /* Sucesso - Estilo do site original */
-.success-breaking {
+.successBreaking {
   border: 1px solid rgba(0, 255, 136, 0.3);
   border-radius: 12px;
   padding: 16px;
@@ -536,13 +536,13 @@
   }
 }
 
-.success-header {
+.successHeader {
   display: flex;
   align-items: center;
   gap: 14px;
 }
 
-.success-icon {
+.successIcon {
   width: 36px;
   height: 36px;
   border-radius: 50%;
@@ -553,19 +553,19 @@
   flex-shrink: 0;
 }
 
-.success-check {
+.successCheck {
   width: 18px;
   height: 18px;
   color: white;
   stroke-width: 3;
 }
 
-.success-text {
+.successText {
   flex: 1;
   text-align: left;
 }
 
-.success-main {
+.successMain {
   font-size: 14px;
   font-weight: 500;
   color: #10b981;
@@ -573,7 +573,7 @@
   line-height: 1.3;
 }
 
-.success-sub {
+.successSub {
   font-size: 12px;
   color: #8e8e8e;
   margin: 0;
@@ -581,13 +581,13 @@
 }
 
 /* Ajustes para botão quando sucesso */
-.login-btn.active {
+.loginBtn.active {
   background: linear-gradient(135deg, #4a37b6, #ab58f4);
   box-shadow: 0 4px 15px rgba(74, 55, 182, 0.4);
   opacity: 1;
 }
 
-.login-btn.active:hover {
+.loginBtn.active:hover {
   background: linear-gradient(135deg, #3a2b96, #8b48d4);
   transform: translateY(-1px);
   box-shadow: 0 6px 20px rgba(74, 55, 182, 0.5);
@@ -599,6 +599,6 @@
   50% { opacity: 0.6; }
 }
 
-.crypto-spinner {
+.cryptoSpinner {
   animation: spin 0.8s linear infinite;
 }
