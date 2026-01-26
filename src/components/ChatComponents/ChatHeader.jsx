@@ -27,7 +27,7 @@ export default function ChatHeader() {
           </button>
 
           <button className="chat-name-btn">
-            <span className="chat-user-name">Jo*******</span>
+            <span className="chat-user-name">Jo******</span>
             <span className="chat-user-status">Online</span>
           </button>
         </div>
