@@ -4,6 +4,7 @@
 
 .directStories {
   position: relative;
+  padding-left: 10px;
 }
 
 /* ===============================
@@ -23,7 +24,7 @@
 
 .storiesScroll {
   display: flex;
-  gap: 24px;
+  gap: 16px;
   padding: 0px 16px 0;
   overflow-x: auto;
   overflow-y: visible;

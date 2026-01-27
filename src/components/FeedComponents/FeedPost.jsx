@@ -1,13 +1,12 @@
 import styles from "./FeedPost.module.css";
 
-import avatar from "../../assets/feed/perfil-sem-foto.jpeg";
 import likeIcon from "../../assets/feed/coracao.svg";
 import commentIcon from "../../assets/feed/comentario.svg";
 import repostIcon from "../../assets/feed/repost.svg";
 import sendIcon from "../../assets/feed/enviar.svg";
 import saveIcon from "../../assets/feed/salvar.svg";
 
-export default function FeedPost() {
+export default function FeedPost({ username, avatar, likes, comments, time }) {
   return (
     <article className={styles.feedPost}>
 
@@ -15,7 +14,7 @@ export default function FeedPost() {
       <header className={styles.postHeader}>
         <div className={styles.postUser}>
           <img src={avatar} alt="Usuário" className={styles.postAvatar} />
-          <span className={styles.postUsername}>And*****</span>
+          <span className={styles.postUsername}>{username}</span>
         </div>
 
         <button className={styles.postMenu}>⋯</button>
@@ -41,7 +40,7 @@ export default function FeedPost() {
           </svg>
 
           <p className={styles.restrictedTitle}>Conteúdo restrito</p>
-          <p className={styles.restrictedTime}>Agora · 16:53</p>
+          <p className={styles.restrictedTime}>{time} · 16:53</p>
         </div>
       </div>
 
@@ -51,12 +50,12 @@ export default function FeedPost() {
 
           <div className={styles.actionItem}>
             <img src={likeIcon} alt="Curtir" />
-            <span>204</span>
+            <span>{likes}</span>
           </div>
 
           <div className={styles.actionItem}>
             <img src={commentIcon} alt="Comentar" />
-            <span>73</span>
+            <span>{comments}</span>
           </div>
 
           <div className={styles.actionItem}>
@@ -75,7 +74,7 @@ export default function FeedPost() {
       </div>
 
       {/* TEMPO */}
-      <div className={styles.postTime}>Agora</div>
+      <div className={styles.postTime}>{time}</div>
 
     </article>
   );

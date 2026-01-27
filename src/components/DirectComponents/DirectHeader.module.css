@@ -6,6 +6,7 @@
   right: 0;
   z-index: 50;
   background-color: #0B1014;
+  border-bottom: 1px solid rgb(31, 41, 55);
 }
 
 /* WRAPPER INTERNO (equivale ao flex items-center justify-between px-4 py-3) */

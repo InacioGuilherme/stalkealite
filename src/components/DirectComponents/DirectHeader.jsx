@@ -1,6 +1,10 @@
 import styles from "./DirectHeader.module.css";
+import { Navigate, useNavigate } from "react-router-dom";
+
 
 export default function DirectHeader() {
+  const navigate = useNavigate();
+  
   return (
     <div
       className={styles.directHeader}
@@ -19,6 +23,7 @@ export default function DirectHeader() {
           <button
             type="button"
             aria-label="Voltar"
+            onClick={() => navigate("/feed")}
             className={styles.directBack}
             style={{ background: "none", border: "none", cursor: "pointer" }}
           >
