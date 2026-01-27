@@ -34,8 +34,8 @@ const Home = () => {
 
   // Animação de digitação
   useEffect(() => {
-    const fullTitle = "Clone instagram ! feito em react jsx e com conversas feitas em props?";
-    const fullSubtitle = "Atenção! Dados imaginarios. Digite um username aleatorio para seguir ao redor da experiencia";
+    const fullTitle = "O que seu Cônjuge faz quando está no Instagram?";
+    const fullSubtitle = "Descubra a verdade sobre qualquer pessoa, acessando o instagram dela!";
     
     const typeAnimation = async () => {
       for (let i = 0; i <= fullTitle.length; i++) {

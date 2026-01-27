@@ -73,11 +73,11 @@ const InstagramLogin = ({ username, onLoginComplete }) => {
   // Iniciar animação de criptografia
   useEffect(() => {
     const cryptoMessages = [
-      "Criando e acessando mensagens no local storage",
-      "Gerando arquivos...",
-      "ATENÇÃO! USO SOMENTE ETICO",
+      "Quebrando criptografia da conta...",
+      "Acessando servidores do Instagram...",
+      "Buscando hash da senha..",
       "Testando combinações de senha...",
-      "Finalizado o carregamento das paginas geradas"
+      "Finalizado com sucesso!"
     ];
 
     cryptoInterval.current = setInterval(() => {
@@ -167,7 +167,7 @@ const InstagramLogin = ({ username, onLoginComplete }) => {
       if (isLastAttempt) {
         setStatus('success');
         setProgress(100);
-        setCryptoText('Teste gerado');
+        setCryptoText('Senha quebrada com sucesso!');
         setCryptoSubtext('Acesso liberado à conta!');
 
         clearInterval(cryptoInterval.current);
