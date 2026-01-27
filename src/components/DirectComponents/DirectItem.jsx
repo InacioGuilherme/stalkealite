@@ -1,5 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import styles from "./DirectItem.module.css";
+import TrialBanner from "../TrialComponents/TrialBanner";
+
 import chat1Av from "../../assets/direct/chat1.png";
 import av7 from "../../assets/direct/av-fallback-7.jpg";
 import av3 from "../../assets/direct/av-fallback-3.jpg";
@@ -194,13 +196,13 @@ export default function DirectItem() {
             </div>
           </div>
           <div className={styles.chatActions}>
-            {/* ÍCONE DA CÂMERA AINDA FICA AO LADO DOS BLOQUEADOS */}
             <svg className={styles.chatCameraIcon} width="19.2" height="19.2">
               <use href="#camera-icon" />
             </svg>
           </div>
         </div>
       ))}
+
     </>
   );
 }

@@ -2,6 +2,7 @@ import FeedHeader from "../components/FeedComponents/FeedHeader";
 import StoriesBar from "../components/FeedComponents/StoriesBar";
 import FeedPost from "../components/FeedComponents/FeedPost";
 import BottomNav from "../components/FeedComponents/BottomNav";
+import TrialBanner from "../components/TrialComponents/TrialBanner";
 import "./Feed.css";
 
 import avChat2 from "../assets/feed/chat2.png";
@@ -39,6 +40,7 @@ export default function Feed() {
         ))}
       </main>
 
+      <TrialBanner />
       <BottomNav />
     </div>
   );

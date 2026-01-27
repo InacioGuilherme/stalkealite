@@ -1,6 +1,9 @@
 .direct-page {
-  min-height: 100vh;
   background: rgb(11, 16, 20);
-  padding-top: 56px; /* altura do header fixo */
-  padding-bottom: 64px;
+  padding-top: 56px;   /* header */
+  padding-bottom: 64px; /* nav */
+}
+
+.direct-items-container {
+  padding-bottom: 14px; /* espaço visual para banner */
 }

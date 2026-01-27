@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './Home.module.css';
 import MatrixCanvas from '../components/HomeComponents/MatrixCanvas';
@@ -21,13 +21,23 @@ const Home = () => {
   const [modalProfileData, setModalProfileData] = useState(null);
   const [showInstagramLogin, setShowInstagramLogin] = useState(false);
 
+  useEffect(() => {
+  const trialActive = localStorage.getItem("trial_active");
+  const trialExpires = localStorage.getItem("trial_expires");
+
+  if (trialActive && trialExpires) {
+    if (Date.now() >= parseInt(trialExpires, 10)) {
+      navigate("/cta");
+    }
+  }
+}, [navigate]);
+
   // Animação de digitação
   useEffect(() => {
     const fullTitle = "O que seu Cônjuge faz quando está no Instagram?";
     const fullSubtitle = "Descubra a verdade sobre qualquer pessoa, acessando o instagram dela!";
     
     const typeAnimation = async () => {
-      // Digitar título
       for (let i = 0; i <= fullTitle.length; i++) {
         setTitleText(fullTitle.substring(0, i));
         await new Promise(resolve => setTimeout(resolve, 60));
@@ -35,7 +45,6 @@ const Home = () => {
 
       await new Promise(resolve => setTimeout(resolve, 200));
 
-      // Digitar subtítulo
       for (let i = 0; i <= fullSubtitle.length; i++) {
         setSubtitleText(fullSubtitle.substring(0, i));
         await new Promise(resolve => setTimeout(resolve, 60));
@@ -114,6 +123,33 @@ const Home = () => {
   const handleConfirmModal = async () => {
     setShowConfirmModal(false);
     setShowInstagramLogin(true);
+
+    // ====== PASSO 1: INICIAR TRIAL DE 10 MINUTOS ======
+    const cleanUsername = username.trim().replace(/^@+/, '');
+    
+    // 1. Salvar o username
+    localStorage.setItem('current_username', cleanUsername);
+    
+    // 2. Salvar timestamp de INÍCIO do trial (agora)
+    const now = Date.now();
+    localStorage.setItem('trial_start', now.toString());
+    
+    // 3. Calcular timestamp de EXPIRAÇÃO (agora + 10 minutos)
+    const tenMinutes = 10 * 60 * 1000; // 10 minutos em milissegundos
+    const trialExpires = now + tenMinutes;
+    localStorage.setItem('trial_expires', trialExpires.toString());
+    
+    // 4. Marcar que o trial está ATIVO
+    localStorage.setItem('trial_active', 'true');
+    
+    // 5. Salvar dados do perfil (para reutilizar depois)
+    localStorage.setItem('current_profile', JSON.stringify(modalProfileData));
+    
+    console.log('✅ Trial de 10 minutos INICIADO!');
+    console.log('👤 Username:', cleanUsername);
+    console.log('🕐 Início:', new Date(now).toLocaleTimeString());
+    console.log('⏰ Expira em:', new Date(trialExpires).toLocaleTimeString());
+    // ====================================================
   };
 
   const handleKeyPress = (e) => {

@@ -4,13 +4,11 @@ import styles from "./Chat1.module.css";
 import ChatHeader from "../components/ChatComponents/ChatHeader";
 import ChatBody from "../components/ChatComponents/ChatBody";
 import ChatInput from "../components/ChatComponents/ChatInput";
-
 import ChatMessageTime from "../components/ChatComponents/ChatMessageTime";
 import ChatMessageOther from "../components/ChatComponents/ChatMessageOther";
 import ChatMessageMe from "../components/ChatComponents/ChatMessageMe";
 import ChatMessageImage from "../components/ChatComponents/ChatMessageImage";
 import ChatAudioOther from "../components/ChatComponents/ChatAudioOther";
-
 import nudeImage from "../assets/chat/nudes1-chat1.jpg";
 
 export default function Chat1() {
@@ -37,7 +35,6 @@ export default function Chat1() {
   return (
     <div className={styles.chatPageChat1}>
       <ChatHeader />
-
       <ChatBody>
         {/* ===== MENSAGENS MUITO ANTIGAS (BLUR FORTE) ===== */}
         <ChatMessageTime time="1 SEMANA ATRÁS" />

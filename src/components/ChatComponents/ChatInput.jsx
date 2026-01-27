@@ -5,7 +5,6 @@ import micIcon from "../../assets/chat/microfone.svg";
 import galleryIcon from "../../assets/chat/galeria.svg";
 import stickerIcon from "../../assets/chat/sticker.svg";
 import heartIcon from "../../assets/chat/coracao.svg";
-
 export default function ChatInput() {
   return (
     <div className={styles.chatInputContainer}>
